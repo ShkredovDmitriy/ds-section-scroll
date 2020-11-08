@@ -1,0 +1,25 @@
+.ds-modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(100vw + 1.875rem);
+  height: 100vh;
+  z-index: 1301;
+  overflow-y: auto;
+}
+
+.ds-modal-container-block {
+  display: block;
+}
+
+.ds-modal-wrapper {
+  width: 100vw;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

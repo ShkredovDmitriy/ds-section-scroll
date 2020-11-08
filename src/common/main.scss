@@ -1,0 +1,12 @@
+@import "./mixins.scss";
+@import "./fonts.scss";
+@import "./vars.scss";
+@import "./reset.scss";
+
+// blocks
+@import "../blocks/demo-header/demo-header.scss";
+@import "../blocks/demo-content/demo-content.scss";
+@import "../blocks/demo-footer/demo-footer.scss";
+
+// components
+@import "../components/ds-section-scroll/ds-section-scroll.scss";

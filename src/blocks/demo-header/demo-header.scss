@@ -1,0 +1,32 @@
+.ds-modal-demo-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+  background-color: $color-blue;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+.ds-modal-demo-header__link {
+  margin-left: auto;
+  display: block;
+
+  .svg {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    // background-image: url('icon-github.svg');
+  }
+
+  // svg {
+  //   display: block;
+  //   width: 2rem;
+  //   height: 2rem;
+  // }
+}

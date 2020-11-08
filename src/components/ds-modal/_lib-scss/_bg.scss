@@ -1,0 +1,47 @@
+.ds-modal-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-black;
+  opacity: 0.7;
+  z-index: 1300;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+}
+
+.ds-modal-bg-block {
+  display: block;
+}
+
+.ds-modal-bg-show {
+  animation: ds-modal-bg-show linear 200ms;
+  animation-fill-mode: forwards;
+}
+
+.ds-modal-bg-hide {
+  animation: ds-modal-bg-hide linear 200ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ds-modal-bg-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes ds-modal-bg-hide {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
