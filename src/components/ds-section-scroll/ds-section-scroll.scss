@@ -17,3 +17,8 @@
 .ds-section-scroll-bottom {
   transform: translate3d(0, 100vh, 0);
 }
+
+
+.ds-section-scroll-top {
+  transform: translate3d(0, -100vh, 0);
+}

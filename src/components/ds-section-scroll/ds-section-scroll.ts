@@ -25,11 +25,11 @@ class DsSectionScroll {
         config.state += 1;
         if(config.state > 2) {config.state = 2 }
         console.log(config.state);
-        sections.forEach(function(item, i){
+        sections.forEach(function(item, i) {
           if( i === config.state) {
             item.classList.remove('ds-section-scroll-bottom');
           } else if (i < config.state ) {
-            // item.classList.add('ds-section-scroll-bottom');
+            item.classList.add('ds-section-scroll-top');
           } else {
             item.classList.add('ds-section-scroll-bottom');
           }
@@ -40,11 +40,12 @@ class DsSectionScroll {
         console.log(config.state);
         sections.forEach(function(item, i){
           if( i === config.state) {
+            item.classList.remove('ds-section-scroll-top');
             item.classList.remove('ds-section-scroll-bottom');
           } else if (i < config.state ) {
-            // item.classList.add('ds-section-scroll-bottom');
-          } else {
             item.classList.add('ds-section-scroll-bottom');
+          } else {
+            item.classList.add('ds-section-scroll-top');
           }
         })
       }
