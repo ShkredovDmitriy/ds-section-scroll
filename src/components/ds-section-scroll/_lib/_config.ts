@@ -2,10 +2,11 @@ const config = {
   bodyBlockClass: "ds-section-scroll-overflow-hidden", // body class
   scrollContainer: ".ds-section-scroll-container", // scroll container class
   scrollItem: ".ds-section-scroll-container", // scroll item class
-  modals: new Map(), // all scroll items
+  sections: [], // all scroll items
   logs: false, // show logs in terminal
   zIndex: 1999, // scroll z-index
   state: 0, // scroll state
+  delta: 0,
 
   // 
   modalData: "data-ds-modal", // modal data attribute

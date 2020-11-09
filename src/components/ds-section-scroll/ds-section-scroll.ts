@@ -1,16 +1,60 @@
 import config from "./_lib/_config";
+import sectionScrollInit from "./_lib/sectionScrollInit";
+
+
+function wheelDirection() {
+  if(config.delta > 0) {
+    config.state += 1;
+    if(config.state > 2) {config.state = 2 }
+    console.log(config.state);
+    config.sections.forEach(function(item, i) {
+      if( i === config.state) {
+        item.classList.remove('ds-section-scroll-bottom');
+      } else if (i < config.state ) {
+        item.classList.add('ds-section-scroll-top');
+      } else {
+        item.classList.add('ds-section-scroll-bottom');
+      }
+    })
+  } else {
+    config.state -= 1;
+    if(config.state < 0) {config.state = 0 }
+    console.log(config.state);
+    config.sections.forEach(function(item, i){
+      if( i === config.state) {
+        item.classList.remove('ds-section-scroll-top');
+      } else if (i > config.state ) {
+        item.classList.add('ds-section-scroll-bottom');
+      } else {
+        item.classList.add('ds-section-scroll-top');
+      }
+    })
+  }
+}
+
+function deBounce(callback) {
+  console.log("debouncing");
+  let working = true;
+  return function() {
+    if(working === false) return
+    console.log("bbbbbbbbb");
+    callback();
+    working = false;
+    setTimeout(() => { working = true; }, 800)
+  }
+}
+
+const bbb = deBounce(function(){
+  console.log("aaaaaaaaa");
+  wheelDirection();
+})
 
 class DsSectionScroll {
 
   init() {
-    //   sectionScrollInit();
-    const body: HTMLElement = document.querySelector('body');
-    const container: HTMLElement = document.querySelector('.ds-section-scroll-container');
-    const sections = container.querySelectorAll('.ds-section-scroll-item');
-
-    body.classList.add('ds-section-scroll-body');
+    sectionScrollInit();
     
-    sections.forEach(function(item, i){
+    config.sections.forEach(function(item, i){
       if( i === 0) {
         item.classList.add('ds-section-scroll-scrollable');
       } else {
@@ -19,36 +63,9 @@ class DsSectionScroll {
       }
     })
 
-    document.addEventListener('wheel', function(event){
-      console.log(event.deltaY);
-      if(event.deltaY > 0){
-        config.state += 1;
-        if(config.state > 2) {config.state = 2 }
-        console.log(config.state);
-        sections.forEach(function(item, i) {
-          if( i === config.state) {
-            item.classList.remove('ds-section-scroll-bottom');
-          } else if (i < config.state ) {
-            item.classList.add('ds-section-scroll-top');
-          } else {
-            item.classList.add('ds-section-scroll-bottom');
-          }
-        })
-      } else {
-        config.state -= 1;
-        if(config.state < 0) {config.state = 0 }
-        console.log(config.state);
-        sections.forEach(function(item, i){
-          if( i === config.state) {
-            item.classList.remove('ds-section-scroll-top');
-            item.classList.remove('ds-section-scroll-bottom');
-          } else if (i < config.state ) {
-            item.classList.add('ds-section-scroll-bottom');
-          } else {
-            item.classList.add('ds-section-scroll-top');
-          }
-        })
-      }
+    document.addEventListener('wheel', function(event) {
+      config.delta = event.deltaY;
+      bbb();
     })
   }
 }
