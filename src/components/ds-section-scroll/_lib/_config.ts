@@ -2,7 +2,7 @@ const config = {
   bodyBlockClass: "ds-section-scroll-overflow-hidden", // body class
   scrollContainer: ".ds-section-scroll-container", // scroll container class
   scrollItem: ".ds-section-scroll-container", // scroll item class
-  sections: [], // all scroll items
+  sections: new Array, // all scroll items
   logs: false, // show logs in terminal
   zIndex: 1999, // scroll z-index
   state: 0, // scroll state

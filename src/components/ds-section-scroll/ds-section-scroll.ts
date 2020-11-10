@@ -32,7 +32,7 @@ function wheelDirection() {
   }
 }
 
-function deBounce(callback) {
+function deBounce(callback: Function) {
   console.log("debouncing");
   let working = true;
   return function() {
@@ -40,7 +40,7 @@ function deBounce(callback) {
     console.log("bbbbbbbbb");
     callback();
     working = false;
-    setTimeout(() => { working = true; }, 800)
+    setTimeout(() => { working = true; }, 500)
   }
 }
 
