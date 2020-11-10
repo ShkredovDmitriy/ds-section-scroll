@@ -32,15 +32,31 @@ function wheelDirection() {
   }
 }
 
+// function deBounce(callback: Function) {
+//   console.log("debouncing");
+//   let working = true;
+//   return function() {
+//     if(working === false) return
+//     console.log("bbbbbbbbb");
+//     callback();
+//     working = false;
+//     setTimeout(() => { working = true; }, 500)
+//   }
+// }
+
 function deBounce(callback: Function) {
   console.log("debouncing");
-  let working = true;
+  let block_long = false;
+  let block_short = false;
+
   return function() {
-    if(working === false) return
-    console.log("bbbbbbbbb");
-    callback();
-    working = false;
-    setTimeout(() => { working = true; }, 500)
+
+   if(block_long === false) {
+      console.log("work");
+      block_long = true;
+      callback();
+      setTimeout(() => { block_long = false; }, 1000)
+    }
   }
 }
 
