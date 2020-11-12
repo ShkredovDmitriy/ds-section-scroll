@@ -11,3 +11,27 @@
     margin: 0.25rem;
   }
 }
+
+.ds-section-scroll-dots {
+  position: fixed;
+  z-index: 2999;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ds-section-scroll-dot {
+  display: block;
+  margin: 1rem;
+  padding: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: $color-white;
+  cursor: pointer;
+
+  &.active {
+    box-shadow: 0 0 0.625rem 0.25rem $color-white;
+  }
+}

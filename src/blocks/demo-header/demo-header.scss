@@ -13,6 +13,25 @@
   z-index: 1000;
 }
 
+.ds-section-scroll-buttons {
+  display: flex;
+}
+
+.ds-section-scroll-button {
+  margin: 0.5rem;
+  padding: 0.25rem;
+  border: 1px solid $color-white;
+  background-color: $color-blue;
+  color: $color-white;
+  box-shadow: none;
+  cursor: pointer;
+
+  &.active {
+    background-color: $color-white;
+    color: $color-blue;
+  }
+}
+
 .ds-modal-demo-header__link {
   margin-left: auto;
   display: block;

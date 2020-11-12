@@ -1,12 +1,12 @@
 import config from "./_lib/_config";
-import sectionScrollInit from "./_lib/sectionScrollInit";
-
+import sectionScrollInit from "./_lib/_init";
+import deBounce from "./_lib/_deBounce"
 
 function wheelDirection() {
+
   if(config.delta > 0) {
     config.state += 1;
     if(config.state > 2) {config.state = 2 }
-    console.log(config.state);
     config.sections.forEach(function(item, i) {
       if( i === config.state) {
         item.classList.remove('ds-section-scroll-bottom');
@@ -19,7 +19,6 @@ function wheelDirection() {
   } else {
     config.state -= 1;
     if(config.state < 0) {config.state = 0 }
-    console.log(config.state);
     config.sections.forEach(function(item, i){
       if( i === config.state) {
         item.classList.remove('ds-section-scroll-top');
@@ -30,38 +29,10 @@ function wheelDirection() {
       }
     })
   }
+  config.beforeScroll(config.state);
 }
 
-// function deBounce(callback: Function) {
-//   console.log("debouncing");
-//   let working = true;
-//   return function() {
-//     if(working === false) return
-//     console.log("bbbbbbbbb");
-//     callback();
-//     working = false;
-//     setTimeout(() => { working = true; }, 500)
-//   }
-// }
-
-function deBounce(callback: Function) {
-  console.log("debouncing");
-  let block_long = false;
-  let block_short = false;
-
-  return function() {
-
-   if(block_long === false) {
-      console.log("work");
-      block_long = true;
-      callback();
-      setTimeout(() => { block_long = false; }, 1000)
-    }
-  }
-}
-
-const bbb = deBounce(function(){
-  console.log("aaaaaaaaa");
+const move = deBounce(function(){
   wheelDirection();
 })
 
@@ -81,8 +52,16 @@ class DsSectionScroll {
 
     document.addEventListener('wheel', function(event) {
       config.delta = event.deltaY;
-      bbb();
+      move();
     })
+  }
+
+  changeSection(id: number){
+    console.log(id);
+  }
+
+  beforeScroll(f: any) {
+    config.beforeScroll = f;
   }
 }
 
