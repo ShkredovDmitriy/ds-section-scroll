@@ -14,7 +14,7 @@ const config = {
   openData: "data-ds-modal-open", // open button data attribute
   buttonClose: ".ds-modal-close", // close buttons class
   // 
-  beforeScroll: function(){},
+  beforeScroll: function(id){},
 };
 
 export default config;
