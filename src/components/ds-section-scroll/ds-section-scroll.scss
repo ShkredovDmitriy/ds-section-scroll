@@ -10,15 +10,30 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  transform: translate3d(0, 0, 0);
   transition: transform 700ms ease;
+}
+
+.ds-section-scroll-top {
+  transform: translate3d(0, -100vh, 0);
+  opacity: 0;
+}
+
+.ds-section-scroll-left {
+  transform: translate3d(-100vw, 0, 0);
+  opacity: 0;
+}
+
+.ds-section-scroll-right {
+  transform: translate3d(100vw, 0, 0);
+  opacity: 0;
 }
 
 .ds-section-scroll-bottom {
   transform: translate3d(0, 100vh, 0);
+  opacity: 0;
 }
 
-
-.ds-section-scroll-top {
-  transform: translate3d(0, -100vh, 0);
+.ds-section-scroll-current {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
 }

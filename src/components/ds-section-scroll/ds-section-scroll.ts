@@ -1,67 +1,44 @@
 import config from "./_lib/_config";
-import sectionScrollInit from "./_lib/_init";
-import deBounce from "./_lib/_deBounce"
+import deBounce from "./_lib/_deBounce";
+import sectionAnimation from "./_lib/_sectionAnimation";
+
+(() => {
+  const sectionScrollContainer:HTMLElement = document.querySelector(".ds-section-scroll-container");
+  const sectionsOnPage = sectionScrollContainer.querySelectorAll(".ds-section-scroll-item");
+  sectionsOnPage.forEach((section, id) => {
+    section.classList.add("ds-section-scroll-scrollable");
+    section.style.zIndex=`${1000 + id}`;
+    if(id > 0) {
+      section.classList.add("ds-section-scroll-top");
+    }
+    config.sections.push(section);
+  })
+})()
 
 function wheelDirection() {
+  console.log(config.delta);
+  console.log(config.sections);
+  if (config.delta > 0) config.currentID += 1;
+  else config.currentID -= 1;
 
-  if(config.delta > 0) {
-    config.state += 1;
-    if(config.state > 2) {config.state = 2 }
-    config.sections.forEach(function(item, i) {
-      if( i === config.state) {
-        item.classList.remove('ds-section-scroll-bottom');
-      } else if (i < config.state ) {
-        item.classList.add('ds-section-scroll-top');
-      } else {
-        item.classList.add('ds-section-scroll-bottom');
-      }
-    })
-  } else {
-    config.state -= 1;
-    if(config.state < 0) {config.state = 0 }
-    config.sections.forEach(function(item, i){
-      if( i === config.state) {
-        item.classList.remove('ds-section-scroll-top');
-      } else if (i > config.state ) {
-        item.classList.add('ds-section-scroll-bottom');
-      } else {
-        item.classList.add('ds-section-scroll-top');
-      }
-    })
-  }
-  config.beforeScroll(config.state);
+  console.log(config.currentID);
+  sectionAnimation(config.sections[config.currentID], "ds-section-scroll-current");
+  
 }
 
 const move = deBounce(function(){
   wheelDirection();
 })
 
+
+
 class DsSectionScroll {
 
   init() {
-    sectionScrollInit();
-    
-    config.sections.forEach(function(item, i){
-      if( i === 0) {
-        item.classList.add('ds-section-scroll-scrollable');
-      } else {
-        item.classList.add('ds-section-scroll-scrollable');
-        item.classList.add('ds-section-scroll-bottom');
-      }
-    })
-
     document.addEventListener('wheel', function(event) {
       config.delta = event.deltaY;
       move();
     })
-  }
-
-  changeSection(id: number){
-    console.log(id);
-  }
-
-  beforeScroll(f: any) {
-    config.beforeScroll = f;
   }
 }
 

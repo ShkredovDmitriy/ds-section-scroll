@@ -7,6 +7,7 @@ const config = {
   zIndex: 1999, // scroll z-index
   state: 0, // scroll state
   delta: 0, // scroll direction
+  currentID: 0,
   // 
   modalData: "data-ds-modal", // modal data attribute
   modalWrapper: ".ds-modal-wrapper", // modal wrapper class
@@ -14,7 +15,7 @@ const config = {
   openData: "data-ds-modal-open", // open button data attribute
   buttonClose: ".ds-modal-close", // close buttons class
   // 
-  beforeScroll: function(id){},
+  // beforeScroll: function(id){},
 };
 
 export default config;
