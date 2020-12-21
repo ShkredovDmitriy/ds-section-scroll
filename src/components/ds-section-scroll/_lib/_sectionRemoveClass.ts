@@ -1,6 +1,6 @@
-export default function sectionAnimation(htmlElement:HTMLElement, animationClass:string) {
+export default function sectionRemoveClass(htmlElement:HTMLElement, animationClass:string) {
   return new Promise((resolve) => {
-    htmlElement.classList.add(animationClass);
+    htmlElement.classList.remove(animationClass);
     const onCssAnimationEnd = (event:Event) => {
       if(event.target === htmlElement) {
         // htmlElement.classList.remove(animationClass);
