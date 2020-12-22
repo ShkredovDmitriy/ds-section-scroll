@@ -1,9 +1,9 @@
 import config from "./_config";
 
 function startingVariant1(section: HTMLElement, id: number) {
-  if(id > 0) section.style.transform = "translate3d(0, 100vh, 0)";
+  if(id > 0) section.style.transform = config.cssDown;
   section.style.zIndex = "1000";
-  section.classList.add("ds-section-scroll-scrollable");
+  section.classList.add(config.scrollable);
 }
 
 function movingVariantUp1() {
