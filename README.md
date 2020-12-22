@@ -4,6 +4,8 @@
 ### Demo
 https://shkredovdmitriy.github.io/ds-section-scroll/
 
+https://codepen.io/shkredovdmitriy/pen/NWRaRwq
+
 
 ### Advantages
 - Easy to use
@@ -18,7 +20,7 @@ https://shkredovdmitriy.github.io/ds-section-scroll/
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=">
-  <link href="https://unpkg.com/ds-section-scroll/umd/dist/ds-section-scroll.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/ds-section-scroll/dist/ds-section-scroll.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="ds-section-scroll-container">
@@ -27,7 +29,7 @@ https://shkredovdmitriy.github.io/ds-section-scroll/
     <div class="ds-section-scroll-item" style="background-color: rgb(11, 117, 11);"></div>
     <div class="ds-section-scroll-item" style="background-color: rgb(104, 8, 90);"></div>
   </div>  
-  <script src="https://unpkg.com/ds-section-scroll/umd/dist/ds-section-scroll.min.js"></script>
+  <script src="https://unpkg.com/ds-section-scroll/dist/ds-section-scroll.min.js"></script>
 </body>
 </html>
 ```
