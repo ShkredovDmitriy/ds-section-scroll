@@ -11,17 +11,6 @@ https://shkredovdmitriy.github.io/ds-section-scroll/
 - Small size (less than 5kb min+gzip)
 
 
-### Without installation
-
-Add this line to head
-```
-<link href="https://unpkg.com/ds-modal-js@0.1.10/dist/ds-sscroll.min.css" rel="stylesheet">
-```
-Add this line to the bottom of the body
-```
-<script src="https://unpkg.com/ds-modal-js@0.1.10/dist/ds-sscroll.min.js"></script>
-```
-
 ### Simple working example
 ```
 <!DOCTYPE html>
@@ -29,7 +18,7 @@ Add this line to the bottom of the body
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=">
-  <link href="https://unpkg.com/ds-modal-js@0.1.10/dist/ds-sscroll.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/ds-section-scroll/umd/dist/ds-section-scroll.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="ds-section-scroll-container">
@@ -38,7 +27,7 @@ Add this line to the bottom of the body
     <div class="ds-section-scroll-item" style="background-color: rgb(11, 117, 11);"></div>
     <div class="ds-section-scroll-item" style="background-color: rgb(104, 8, 90);"></div>
   </div>  
-  <script src="https://unpkg.com/ds-modal-js@0.1.10/dist/ds-sscroll.min.js"></script>
+  <script src="https://unpkg.com/ds-section-scroll/umd/dist/ds-section-scroll.min.js"></script>
 </body>
 </html>
 ```

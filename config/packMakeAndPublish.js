@@ -59,13 +59,13 @@ async function execCommand(command) {
 }
 
 (async function(){
-  await directoryRemove("pack");
+  await directoryRemove("pack")
   await directoryCreate("pack")
   await directoryCreate("pack/dist")
   await fileCopy('index.js', 'pack/index.js')
   await fileCopy('README.md', 'pack/README.md')
   await fileCopy('package-pack.json', 'pack/package.json')
-  await fileCopy('docs/js/main.min.js', 'pack/dist/ds-modal.min.js')
-  await fileCopy('docs/css/main.min.css', 'pack/dist/ds-modal.min.css')
+  await fileCopy('docs/js/main.min.js', 'pack/dist/ds-sscroll.min.js')
+  await fileCopy('docs/css/main.min.css', 'pack/dist/ds-sscroll.min.css')
   await execCommand('cd pack && npm publish')
 })()

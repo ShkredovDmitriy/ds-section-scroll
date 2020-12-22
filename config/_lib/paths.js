@@ -5,5 +5,4 @@ module.exports = {
   src: path.resolve(__dirname, '../../src'),
   images: path.resolve(__dirname, '../../src/assets/images'),
   dist: path.resolve(__dirname, '../../docs'),
-  pack: path.resolve(__dirname, '../../pack'),
 }

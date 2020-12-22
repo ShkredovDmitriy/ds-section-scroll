@@ -1,6 +1,6 @@
 const paths = require('./_lib/paths');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
 
@@ -22,7 +22,7 @@ module.exports = {
   // Entery point
   entry: [paths.src + '/app/main.ts'],
 
-  // Output folder
+  // Output js
   output: {
     path: paths.dist,
     filename: 'js/main.min.js?[hash]',
@@ -41,13 +41,6 @@ module.exports = {
   module: {
     rules: [
 
-      // // Javascript loader
-      // {
-      //   test: /\.js$/,
-      //   exclude: [/node_modules/, /config/],
-      //   use: ['babel-loader'],
-      // },
-
       // Typescript loader
       {
         test: /\.ts$/,
@@ -59,15 +52,27 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: [
-          'style-loader',
           {
-            loader: 'css-loader', options: {sourceMap: true, importLoaders: 1 }
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  autoprefixer()
+                ],
+              },
+              sourceMap: true
+            }
           },
           { 
-            loader: 'postcss-loader', options: {sourceMap: true}
-          },
-          { 
-            loader: 'sass-loader', options: {sourceMap: true}
+            loader: 'sass-loader',
+            options: { sourceMap: true }
           },
         ],
       },
