@@ -59,7 +59,7 @@ async function execCommand(command) {
 }
 
 (async function(){
-  await directoryRemove("pack");
+  await directoryRemove("pack")
   await directoryCreate("pack")
   await directoryCreate("pack/dist")
   await fileCopy('index.js', 'pack/index.js')

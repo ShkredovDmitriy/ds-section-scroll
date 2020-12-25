@@ -1,21 +1,23 @@
 import config from "./_config";
 
 async function sectionPositionTop(section: HTMLElement) {
-  section.style.transform = "translate3d(0, -100vh, 0)";
+  section.style.transform = config.cssUp;
   section.style.transition = "transform " + config.duration + "ms ease 0ms";
 }
 
 async function sectionPositionBottom(section: HTMLElement) {
-  section.style.transform = "translate3d(0, 100vh, 0)";
+  section.style.transform = config.cssDown;
   section.style.transition = "transform " + config.duration + "ms ease 0ms";
 }
 
 async function sectionPositionLeft(section: HTMLElement) {
-  section.style.transform = "translate3d(-100vw, 0, 0)";
+  section.style.transform = config.cssLeft;
+  section.style.transition = "transform " + config.duration + "ms ease 0ms";
 }
 
 async function sectionPositionRight(section: HTMLElement) {
-  section.style.transform = "translate3d(100vw, 0, 0)";
+  section.style.transform = config.cssRight;
+  section.style.transition = "transform " + config.duration + "ms ease 0ms";
 }
 
 async function sectionPositionCenter(section: HTMLElement) {
