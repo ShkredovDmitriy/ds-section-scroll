@@ -1,0 +1,23 @@
+{
+  "name": "ds-section-scroll",
+  "version": "0.1.10",
+  "description": "ds-section-scroll - lightweight and easy to use javascript section fullpage scroll",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShkredovDmitriy/ds-section-scroll.git"
+  },
+  "keywords": [
+    "fullpage scroll",
+    "no jQuery"
+  ],
+  "author": {
+    "name": "Dmitriy Shkredov",
+    "email": "ShkredovDmitriy@gmail.com",
+    "url": "https://github.com/ShkredovDmitriy/ds-section-scroll"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShkredovDmitriy/ds-section-scroll/issues"
+  },
+  "homepage": "https://github.com/ShkredovDmitriy/ds-section-scroll#readme"
+}
