@@ -13,6 +13,16 @@ ds-section-scroll - lightweight and easy to use javascript section fullpage scro
 ### How to use in older browsers
 For older browsers please use <a href="https://www.npmjs.com/package/promise-polyfill" target="_blank">promise-polyfill</a>
 
+### Use without installation
+Add this line to head
+```
+<link href="https://unpkg.com/ds-section-scroll/dist/ds-section-scroll.min.css" rel="stylesheet">
+```
+Add this line to the bottom of the body
+```
+<script src="https://unpkg.com/ds-section-scroll/dist/ds-section-scroll.min.js"></script>
+```
+
 ### Simple working example
 ```
 <!DOCTYPE html>
