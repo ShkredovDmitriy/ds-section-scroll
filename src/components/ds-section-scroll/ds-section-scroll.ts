@@ -19,7 +19,7 @@ function wheelDirection() {
     else if (config.variant === 2) movingVariantUpDown2()
     else if (config.variant === 3) movingVariantUpDown3()
   }
-  console.log(config.currentID);  
+  console.log(config.currentID);
 }
 
 const move = deBounce(function(){

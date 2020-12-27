@@ -1,14 +1,13 @@
 {
   "name": "ds-section-scroll",
   "version": "0.1.15",
-  "description": "ds-section-scroll - lightweight and easy to use javascript full page section scroll",
+  "description": "ds-section-scroll - lightweight and easy to use javascript section fullpage scroll",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShkredovDmitriy/ds-section-scroll.git"
   },
   "keywords": [
-    "modal",
-    "dialog",
+    "fullpage scroll",
     "no jQuery"
   ],
   "author": {
