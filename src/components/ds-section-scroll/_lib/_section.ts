@@ -21,7 +21,7 @@ export default class Section {
     console.log("initialised");
   }
 
-  moveFromTop() {
+  async moveFromTop() {
     moveSectionFromTop(this.section);
   }
 

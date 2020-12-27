@@ -13,6 +13,19 @@
   z-index: 2000;
 }
 
+.ds-modal-demo-header__button {
+  display: inline-flex;
+  margin: 0.25rem;
+  padding: 0.3125rem 1rem;
+  border: 0;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  &.active {
+    background-color: #a3baec;
+  }
+}
+
 .ds-modal-demo-header__link {
   margin-left: auto;
   display: block;

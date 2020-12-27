@@ -13,7 +13,6 @@ function movingVariantUp1() {
   });
 }
 
-
 function movingVariantDown1() {
   config.sections.forEach((section, i) => {
     if (i > config.currentID) section.moveToBottom();

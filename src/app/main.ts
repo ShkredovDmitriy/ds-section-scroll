@@ -10,4 +10,22 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
 import "../common/main.scss";
 import dsSectionScroll from '../components/ds-section-scroll/ds-section-scroll';
+
+const headerButtons = document.querySelectorAll(".ds-modal-demo-header__button");
+
+function setActiveHeaderButton(data) {
+  headerButtons.forEach( (button, id) => {
+    if(id === data.currentID) button.classList.add("active")
+    else button.classList.remove("active")
+  })
+}
+
+headerButtons.forEach((button, id) => {
+  button.addEventListener("click", () => {
+    dsSectionScroll.scrollTo(id);
+  })
+});
+
 dsSectionScroll.init();
+dsSectionScroll.afterScroll( setActiveHeaderButton );
+

@@ -10,6 +10,11 @@ const config = {
   cssDown: "translate3d(0, 100vh, 0)",
   cssLeft: "translate3d(-100vw, 0, 0)",
   cssRight: "translate3d(100vw, 0, 0)",
+  // logs text
+  logComponent: "ds-section-scroll",
+  // callbacks 
+  beforeScroll: new Function,
+  afterScroll: new Function,
   // 
   sections: new Array,
   state: 0,
