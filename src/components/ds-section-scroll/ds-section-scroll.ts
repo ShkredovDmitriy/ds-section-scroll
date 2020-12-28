@@ -74,7 +74,9 @@ class DsSectionScroll {
 
       config.currentID = id;
       config.beforeScroll(beforeScrollData);
-      movingVariantUp1();
+      if (config.variant === 1) movingVariantUp1()
+      else if (config.variant === 2) movingVariantUpDown2()
+      else if (config.variant === 3) movingVariantUpDown3()
 
       const afterScrollData = {
         currentID: config.currentID
@@ -89,7 +91,9 @@ class DsSectionScroll {
       config.beforeScroll(beforeScrollData); 
 
       config.currentID = id;
-      movingVariantDown1();
+      if (config.variant === 1) movingVariantDown1()
+      else if (config.variant === 2) movingVariantUpDown2()
+      else if (config.variant === 3) movingVariantUpDown3()
 
       const afterScrollData = {
         currentID: config.currentID

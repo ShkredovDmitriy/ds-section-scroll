@@ -21,7 +21,7 @@ const config = {
   delta: 0,
   currentID: 0,
   // 
-  variant: 1,
+  variant: 3,
   zIndex: 1000,
   duration: 500,
   logs: false,
