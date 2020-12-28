@@ -13,7 +13,7 @@ import dsSectionScroll from '../components/ds-section-scroll/ds-section-scroll';
 
 const headerButtons = document.querySelectorAll(".ds-modal-demo-header__button");
 
-function setActiveHeaderButton(data) {
+function setActiveHeaderButton(data: any) {
   headerButtons.forEach( (button, id) => {
     if(id === data.currentID) button.classList.add("active")
     else button.classList.remove("active")

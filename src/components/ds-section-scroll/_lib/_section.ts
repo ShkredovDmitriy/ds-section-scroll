@@ -17,8 +17,6 @@ export default class Section {
     if (config.variant === 1) startingVariant1(this.section, this.id);
     else if (config.variant === 2) startingVariant2(this.section, this.id);
     else if (config.variant === 3) startingVariant3(this.section, this.id);
-    console.log(this.section);
-    console.log("initialised");
   }
 
   async moveFromTop() {
